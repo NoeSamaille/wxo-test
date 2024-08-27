@@ -19,7 +19,7 @@ Go to watsonx.ai SaaS, start building a prompt then copy content of [prompt.txt]
 
 1. Create a python script and edit with Continue: 
     ```
-    Generate a FastAPI skeleton that loads environment variables from .env file and exposes /health and /user-stories/generate endpoints.
+    Generate a FastAPI skeleton protected with basic API key that loads environment variables from .env file and exposes /health and /user-stories/generate endpoints.
     ```
 2. Copy the code from watsonx to that file.
 3. Ask continue to generate a Dockerfile for the codebase.

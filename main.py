@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.security import APIKeyHeader
 from pydantic import BaseModel
 from langchain_ibm import WatsonxLLM
 from dotenv import load_dotenv
@@ -17,12 +18,17 @@ watsonx_llm = WatsonxLLM(
     }
 )
 
+API_KEY = os.environ["API_KEY"]
+api_key_header = APIKeyHeader(name="X-API-Key")
+
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
 
 @app.post("/user-stories/generate")
-def generate_user_story(query: str):
+def generate_user_story(query: str, api_key: str = Depends(api_key_header)):
+    if api_key != API_KEY:
+        raise HTTPException(status_code=401, detail="Invalid API key")
     res = watsonx_llm.generate(["""
 <s> [INST]
 Generate as many user stories as needed to fulfill the given requirement, with an emphasis on improving user experience, access management, functionality, usability, and overall system performance, ensuring that all features are user-centric and aligned with business goals.
@@ -87,3 +93,4 @@ Input: """ + query + """
 Output:
                                  """])
     return json.loads(res.generations[0][0].text)
+
