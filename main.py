@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Depends, HTTPException, status
+from typing import List
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import APIKeyHeader
 from pydantic import BaseModel
 from langchain_ibm import WatsonxLLM
@@ -7,7 +8,10 @@ import json
 import os
 
 load_dotenv()
-app = FastAPI()
+app = FastAPI(openapi_tags=[{
+    "name": "pmo",
+    "description": "pmo"
+}])
 
 # Initialize WatsonxLLM
 watsonx_llm = WatsonxLLM(
@@ -18,15 +22,19 @@ watsonx_llm = WatsonxLLM(
     }
 )
 
+class UserStory(BaseModel):
+    title: str
+    description: str
+
 API_KEY = os.environ["API_KEY"]
 api_key_header = APIKeyHeader(name="X-API-Key")
 
-@app.get("/health")
+@app.get("/health", tags=["pmo"])
 def health_check():
     return {"status": "ok"}
 
-@app.post("/user-stories/generate")
-def generate_user_story(query: str, api_key: str = Depends(api_key_header)):
+@app.post("/user-stories/generate", tags=["pmo"])
+def generate_user_stories(query: str, api_key: str = Depends(api_key_header)) -> List[UserStory]:
     if api_key != API_KEY:
         raise HTTPException(status_code=401, detail="Invalid API key")
     res = watsonx_llm.generate(["""
