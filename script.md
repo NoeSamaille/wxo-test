@@ -9,6 +9,13 @@ Because I always love a challenge, let's build this AI assistant using watsonx.a
 ## Create prompt for User Story generation - 1 min
 
 Go to watsonx.ai SaaS, start building a prompt then copy content of [prompt.txt](./prompt.txt).
+
+## Develop a basic FastAPI server for User Story generation - 3 min
+
+1. Create a python script and edit with Continue: 
+    ```
+    Generate a FastAPI skeleton protected with basic API key that loads environment variables from .env file and exposes /health and /user-stories/generate endpoints.
+    ```
 2. Create `requirements.txt` file with the following content:
     ```
     fastapi
