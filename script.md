@@ -2,7 +2,7 @@
 
 ## Introduce the use case - 1 min
 
-Imagine this: We all work on projects, and we have fantastic tools to track progress, identify blockers, and collaborate on open items. But what if we could take it a step further? But now Generative AI has oppened a whole new world of possibilities, now we can build robust AI assistants to empower Product Owners to increase their productivity writing down user stories based on product requirements, better prioritize work items and gain insights to make better decisions.
+Working on projects, we already have great tools like trello to track progress and collaborate on open items. But what if we could take it a step further and build AI assistants for Product Owners to increase their productivity writing down user stories based on product requirements, better prioritize work items and gain insights to make better decisions.
 
 Because I always love a challenge, let's build this AI assistant using watsonx.ai and watsonx Orchestrate in the next 15 minutes.
 

@@ -5,7 +5,7 @@ Make sure the user stories are logically sequenced, break down the requirement i
 The output should be in JSON format.
 
 Here is an example for reference:
-Input: Develop an Inventory Management System.
+Input: Inventory Management System.
 
 Output:
 [
@@ -52,9 +52,7 @@ Output:
 ]
 End of example.
 
-Use the format mentioned in example to create comprehensive and logically sequenced user stories for any given requirement.
-
-Input: {query}
+Input: {requirement}
 
 [/INST]
 
