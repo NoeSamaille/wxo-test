@@ -1,17 +1,21 @@
 #!/bin/bash
 
-ibmcloud ce project current
-
 # Prompt the user for the required parameters
-read -p "App name: " APP_NAME
+read -p "App Name: " APP_NAME
 read -p "App version: " APP_VERSION
-read -p "GitHub repo URL: " BUILD_SOURCE
+read -p "New GitHub Repo Name: " REPO_NAME
+
+git init
+git add .
+git commit -s -m 'Initial commit'
+gh repo create "https://github.com/NoeSamaille/$REPO_NAME" --public -s .
+git push -u origin main
 
 # Execute the command with the provided parameters
 ibmcloud ce app create \
   --name "$APP_NAME" \
   --build-commit main \
-  --build-source "$BUILD_SOURCE" \
+  --build-source "https://github.com/NoeSamaille/$REPO_NAME" \
   --cpu 0.25 \
   --memory 500M \
   --min-scale 1 \

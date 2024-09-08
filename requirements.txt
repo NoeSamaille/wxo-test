@@ -1,5 +1,6 @@
 fastapi
 uvicorn
-langchain
-langchain-ibm
+pydantic
 python-dotenv
+ibm-watsonx-ai
+langchain-ibm

@@ -4,6 +4,8 @@
 - [ ] Delete GitHub repo
 - [ ] Delete Code Engine app
 - [ ] Delete wxO skills
+- [ ] Empty wxO chat history
 - [ ] Login to IBM Cloud CLI: `ibmcloud login --sso && ibmcloud target -g EMEAWatsonx && ibmcloud ce project select -n watsonx-demos`
 - [ ] Enable Stage Manager on Mac
 - [ ] Copy prompt to clipboard
+- [ ] Open watsonx.ai home page, wxO home page and trello board.
