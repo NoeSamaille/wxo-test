@@ -1,0 +1,9 @@
+
+- [ ] Archive all cards in Trello `To-Do` list
+- [ ] `rm -rf .git`
+- [ ] Delete GitHub repo
+- [ ] Delete Code Engine app
+- [ ] Delete wxO skills
+- [ ] Login to IBM Cloud CLI: `ibmcloud login --sso && ibmcloud target -g EMEAWatsonx && ibmcloud ce project select -n watsonx-demos`
+- [ ] Enable Stage Manager on Mac
+- [ ] Copy prompt to clipboard
