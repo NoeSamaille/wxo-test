@@ -3,9 +3,11 @@
 - [ ] `rm -rf .git`
 - [ ] Delete GitHub repo
 - [ ] Delete Code Engine app
+- [ ] Delete watsonx.ai deployment, space asset and prompt template.
 - [ ] Delete wxO skills
 - [ ] Empty wxO chat history
 - [ ] Login to IBM Cloud CLI: `ibmcloud login --sso && ibmcloud target -g EMEAWatsonx && ibmcloud ce project select -n watsonx-demos`
+- [ ] Check GitHub CLI auth: `gh auth status`
 - [ ] Enable Stage Manager on Mac
 - [ ] Copy prompt to clipboard
 - [ ] Open watsonx.ai home page, wxO home page and trello board.
